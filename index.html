@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Denise Dorfman</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <link rel="icon" sizes="200x200" href="fotos/ICONO.jpg">
+    <style>
+        footer {
+            background-image: url("fotos/ICONO.jpg");
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            text-align: center;
+            font-size: 20px;
+            font-family: Merriweather, serif;
+            margin-top: 0%;
+            margin-bottom: 0%;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Denise Dorfman</h1>
+    <h2><p>Soy Denise, estudiante de la Licenciatura en Diseño, en Di Tella. Aquí les presento algunos de mis trabajos en el transcurso de mi carrera.</p></h2>
+    <h3>BIENVENIDOS</h3>
+    <h4><a href="https://www.instagram.com/denudorfman/" target="_blank" title="instagram">instagram</a></h4>
+    <main>
+        <div><a href="fotos/Trabajo1.jpg" data-lightbox="galeria"><img src="fotos/Trabajo1.jpg" alt="Trabajo1"></a></div>
+        <div><a href="fotos/Trabajo2.jpg" data-lightbox="galeria"><img src="fotos/Trabajo2.jpg" alt="Trabajo2"></a></div>
+        <div><a href="fotos/Trabajo3.jpg" data-lightbox="galeria"><img src="fotos/Trabajo3.jpg" alt="Trabajo3"></a></div>
+        <div><a href="fotos/Trabajo4.jpg" data-lightbox="galeria"><img src="fotos/Trabajo4.jpg" alt="Trabajo4"></a></div>
+    </main>
+    
+    <div id="animation-container"></div> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
+    <script>
+        lightbox.option({
+            'fadeDuration': 200,
+            'wrapAround': true
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('animation-container');
+            
+            function createSphere() {
+                const sphere = document.createElement('div');
+                sphere.classList.add('sphere');
+                
+                
+                sphere.style.left = `${Math.random() * 100}vw`;
+                sphere.style.top = `${Math.random() * 100}vh`;
+                
+               
+                const size = `${Math.random() * 20 + 10}px`;
+                sphere.style.width = size;
+                sphere.style.height = size;
+                
+                
+                sphere.style.animationDuration = `${Math.random() * 5 + 3}s`;
+                
+                container.appendChild(sphere);
+                
+                
+                sphere.addEventListener('animationend', function() {
+                    sphere.remove();
+                });
+            }
+            
+            setInterval(createSphere, 500);
+        });
+    </script>
+    <video src="fotos/video.mp4" controls></video>
+    <footer>Portfolio Denise Dorfman</footer>
+
+</body>
+</html>
